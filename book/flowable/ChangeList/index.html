@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Caiwillie&#39;s Blog</title>
+    <meta name="description" content="">
+
+    <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
+    <link rel="stylesheet" href="/jekyll-asciidoc-quickstart/css/main.css ">
+    <link rel="canonical" href="http://47.242.141.111:4000/jekyll-asciidoc-quickstart/book/flowable/ChangeList/">
+    <link rel="alternate" type="application/rss+xml" title="Caiwillie's Blog" href="http://47.242.141.111:4000/jekyll-asciidoc-quickstart/feed.xml ">
+
+
+    <script>
+    // 百度统计代码
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?2f2fb0461bc232ab50c01a1ced8feacc";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+
+
+
+</head>
+
+
+  <body>
+
+    <header id="top">
+    <div class="wrapper">
+        <a href="/jekyll-asciidoc-quickstart/" class="brand">Caiwillie's Blog</a>
+        <small>I love eating cherry</small>
+        <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
+        <nav id="headerNav">
+            <ul>
+                <li>
+                    
+                    <a href="/jekyll-asciidoc-quickstart/">
+                    
+                        <i class="fa fa-home"></i>Home
+                    </a>
+                </li>
+
+                
+                    
+                    <li>
+                        
+                        <a href="/jekyll-asciidoc-quickstart/archive/">
+                        
+                            <i class="fa fa-archive"></i>Archives
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/jekyll-asciidoc-quickstart/category/">
+                        
+                            <i class="fa fa-th-list"></i>Categories
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/jekyll-asciidoc-quickstart/tag/">
+                        
+                            <i class="fa fa-tags"></i>Tags
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/jekyll-asciidoc-quickstart/collection/">
+                        
+                            <i class="fa fa-bookmark"></i>Collections
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/jekyll-asciidoc-quickstart/about/">
+                        
+                            <i class="fa fa-heart"></i>About
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="page clearfix" post>
+    <div class="left">
+        <h1></h1>
+        <hr>
+        <div class="sect1">
+<h2 id="建议列表">建议列表</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">开始节点和发起人节点</dt>
+<dd>
+<p>开始节点和发起人节点实际都代表流程的开始，这两个节点不会孤立存在，也不能分开使用，因此应该合并简化为一个节点，就是开始节点。
+如果不合并，在流程图上会有歧义：比如某个节点需要退回到流程的开始，退回到开始节点还是退回到发起人节点。</p>
+</dd>
+<dt class="hdlist1">开始表单字段配置</dt>
+<dd>
+<p>开始表单字段配置应该在开始节点上，而不应该在表单引擎内。</p>
+</dd>
+<dt class="hdlist1">增加审批结果条件类型</dt>
+<dd>
+<p>因为审批节点后的分支条件90%以上的都是根据审批结果而来，因此本着简化的原则，当前节点是审批节点，输出分支中的条件类型增加审批结果条件。</p>
+</dd>
+<dt class="hdlist1">删除添加处理人表单操作</dt>
+<dd>
+<p>在未找到处理人的情况下，按照配置要么自动通过，要么需要管理员重新分配，管理员重新分配应该在流程管理后台操作。</p>
+</dd>
+<dt class="hdlist1">去掉高级功能增加接口调用</dt>
+<dd>
+<p>所谓自动执行，自动处理，都以来开放平台的接口，所以在接口调用中配置。接口调用配置包含触发时机，就是节点完成前还是节点完成后，不包含审批结果类型判断，
+审批结果类是接口调用规范中的标准参数之一，应该交给具体的业务方判断。</p>
+</dd>
+<dt class="hdlist1">去掉通用设置中的重复审批</dt>
+<dd>
+<p>重复审批实际上是流程中有多个审批节点，例如，审批节点1》审批节点2》审批节点3》审批节点4.
+如果 审批节点1和审批节点4，审批的对象记录是同一个记录，且审批人是同一个人，那么审批节点3审批通过后，到审批节点4这一步就可以自动通过审批了。
+这是针对流程中有多个表单模型的情况下设置的。
+我们流程中是单模型的，自始至终，所有人审批和填写的同一个模型的同一条记录，因此需要去掉。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+    </div>
+    <button class="anchor"><i class="fa fa-anchor"></i></button>
+    <div class="right">
+        <div class="wrap">
+
+            <!-- Content -->
+            <div class="side content">
+                <div>
+                    Content
+                </div>
+                <ul id="content-side" class="content-ul">
+                </ul>
+            </div>
+            <!-- 其他div框放到这里 -->
+            <!-- <div class="side">bbbb</div> -->
+        </div>
+    </div>
+</div>
+<script src="/jekyll-asciidoc-quickstart/js/pageContent.js " charset="utf-8"></script>
+
+
+    <footer class="site-footer">
+
+
+    <div class="wrapper">
+        <p class="description">
+             Cleverness is a gift, kindness is a choice. 
+        </p>
+        <p class="contact">
+            联系方式: 
+            <a href="https://github.com/caiwillie" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
+            <a href="mailto:caiwillie@126.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>   
+            <a href="https://www.zhihu.com/people/caiwillie" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
+        </p>
+        <p>
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </p>
+        <p class="power">
+            <span>
+                Site powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://pages.github.com/">Github Pages</a>.
+            </span>
+            <span>
+                Theme designed by <a href="https://github.com/Gaohaoyang">HyG</a>.
+            </span>
+        </p>
+    </div>
+</footer>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <div class="back-to-top">
+    <a href="#top" data-scroll>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+    <script src="/jekyll-asciidoc-quickstart /js/main.js " charset="utf-8"></script>
+    <script src="/jekyll-asciidoc-quickstart /js/smooth-scroll.min.js " charset="utf-8"></script>
+    <script type="text/javascript">
+      smoothScroll.init({
+        speed: 500, // Integer. How fast to complete the scroll in milliseconds
+        easing: 'easeInOutCubic', // Easing pattern to use
+        offset: 20, // Integer. How far to offset the scrolling anchor location in pixels
+      });
+    </script>
+    <!-- <script src="/jekyll-asciidoc-quickstart /js/scroll.min.js " charset="utf-8"></script> -->
+  </body>
+
+</html>

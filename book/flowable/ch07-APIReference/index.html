@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Caiwillie&#39;s Blog</title>
+    <meta name="description" content="">
+
+    <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
+    <link rel="stylesheet" href="/jekyll-asciidoc-quickstart/css/main.css ">
+    <link rel="canonical" href="http://47.242.141.111:4000/jekyll-asciidoc-quickstart/book/flowable/ch07-APIReference/">
+    <link rel="alternate" type="application/rss+xml" title="Caiwillie's Blog" href="http://47.242.141.111:4000/jekyll-asciidoc-quickstart/feed.xml ">
+
+
+    <script>
+    // 百度统计代码
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?2f2fb0461bc232ab50c01a1ced8feacc";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+
+
+
+</head>
+
+
+  <body>
+
+    <header id="top">
+    <div class="wrapper">
+        <a href="/jekyll-asciidoc-quickstart/" class="brand">Caiwillie's Blog</a>
+        <small>I love eating cherry</small>
+        <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
+        <nav id="headerNav">
+            <ul>
+                <li>
+                    
+                    <a href="/jekyll-asciidoc-quickstart/">
+                    
+                        <i class="fa fa-home"></i>Home
+                    </a>
+                </li>
+
+                
+                    
+                    <li>
+                        
+                        <a href="/jekyll-asciidoc-quickstart/archive/">
+                        
+                            <i class="fa fa-archive"></i>Archives
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/jekyll-asciidoc-quickstart/category/">
+                        
+                            <i class="fa fa-th-list"></i>Categories
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/jekyll-asciidoc-quickstart/tag/">
+                        
+                            <i class="fa fa-tags"></i>Tags
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/jekyll-asciidoc-quickstart/collection/">
+                        
+                            <i class="fa fa-bookmark"></i>Collections
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/jekyll-asciidoc-quickstart/about/">
+                        
+                            <i class="fa fa-heart"></i>About
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="page clearfix" post>
+    <div class="left">
+        <h1></h1>
+        <hr>
+        <div class="sect1">
+<h2 id="api-参考">API 参考</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="流程模型中心">流程模型中心</h3>
+<div class="sect3">
+<h4 id="新增模型">新增模型</h4>
+<div class="paragraph">
+<p>流程模型数据结构：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json5" data-lang="json5">{
+    "modelId": "1f160364-d170-11ea-9db3-005056c00008", // 非必填 | 流程模型id, 修改时传
+    "childShapes": [], // 字节点
+    "properties": {
+        "process_id": "process_key", // 必填 | 流程的key (用户手动输入, 且保存后不能修改)
+        "name": "测试流程", // 必填 | 流程的名称
+        "formEnName": "test_form", // 必填 | 表单英文名称, 内部表单用
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>子节点数据结构：</p>
+</div>
+<div class="listingblock">
+<div class="title">开始</div>
+<div class="content">
+<pre class="highlight"><code class="language-json5" data-lang="json5">{
+    "resourceId": "startEvent1", // 必填 | 节点定义id (前端自动生成)
+    "properties": {
+        "form": {
+            "fieldAccessAuth": {
+                // 非必填 | 字段访问权限
+            },
+            "operateAuth": {
+                // 非必填 | 表单操作权限：保存、提交
+            },
+            pageUrl: {
+                "web": "",
+                "mobile": ""
+            },
+        },
+        serviceApis: [ // 非必填 | 接口调用
+            {
+                trigger: 0, // 必填 | 0 任务开始前、 1 任务结束后
+                serviceId: 123456, // 必填 | 服务id
+                serviceName: "服务名称", // 必填 | 服务名称
+                apiId: 123456, // 必填 | 接口id
+                apiName: "服务名称", // 必填 | 接口名称
+            }
+        ],
+        copyTo: {
+            "personal": [ // 人员
+                {
+                    "uid": "881649", // uid
+                    "name": "杨六"
+                },
+            ],
+            "leader": [ // 组织领导
+                0, // 0 部门负责人、1 单位负责人、2 上级单位负责人
+            ],
+            "hierarchical": [ // 汇报层级
+                0, // 0 直接上级、1 二级汇报人、2 三级汇报人
+            ]
+        }
+    },
+    "stencil":{
+        "id":"StartNoneEvent" // 必填 | 节点标识
+    },
+    "outgoing":[
+        // 必填 | 下一跳节点出口
+        {
+            "resourceId":"sid-83131E16-E692-47EC-86B5-C95085EB584B"
+        }
+    ]
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">结束</div>
+<div class="content">
+<pre class="highlight"><code class="language-json5" data-lang="json5">{
+    "resourceId":"sid-083B25ED-7EE9-4328-BF1C-C9CFEF69FF15", // 必填 | 节点定义id (前端自动生成)
+    "properties": {
+        copyTo: {
+            "personal": [ // 人员
+                {
+                    "uid": "881649", // uid
+                    "name": "杨六"
+                },
+            ],
+            "leader": [ // 组织领导
+                0, // 0 部门负责人、1 单位负责人、2 上级单位负责人
+            ],
+            "hierarchical": [ // 汇报层级
+                0, // 0 直接上级、1 二级汇报人、2 三级汇报人
+            ]
+        }
+    },
+    "stencil":{
+        "id":"EndNoneEvent" // 必填 | 节点标识
+    }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">审批</div>
+<div class="content">
+<pre class="highlight"><code class="language-json5" data-lang="json5">{
+    "resourceId":"sid-02D0F331-9AEC-4592-8C78-6F405FD401AA", // 必填 | 节点定义id (前端自动生成)
+    "properties": {
+        "name": "结束", // 非必填 | 节点名称
+        "candidateUser": {
+            "personal": [ // 人员
+                {
+                    "uid": "881649", // uid
+                    "name": "杨六"
+                },
+            ],
+            "leader": [ // 组织领导
+                0, // 0 部门负责人、1 单位负责人、2 上级单位负责人
+            ],
+            "hierarchical": [ // 汇报层级
+                0, // 0 直接上级、1 二级汇报人、2 三级汇报人
+            ]
+        },
+        "form": { // 非必填 | 表单配置
+            "fieldAccessAuth": {
+                // 非必填 | 字段访问权限
+            },
+            "operateAuth": {
+                // 非必填 | 表单操作权限：保存、同意、拒绝、回退（配置 同意条件 和 拒绝条件 后不可用）、转审
+            },
+            pageUrl: {
+                "web": "",
+                "mobile": ""
+            },
+        },
+        serviceApis: [ // 非必填 | 接口调用
+            {
+                trigger: 0, // 必填 | 0 任务开始前、1 任务结束后
+                serviceId: 123456, // 必填 | 服务id
+                serviceName: "服务名称", // 必填 | 服务名称
+                apiId: 123456, // 必填 | 接口id
+                apiName: "服务名称", // 必填 | 接口名称
+            }
+        ],
+        "multiInstanceCondition": { // 多实例设置
+            "branchType": 0, // 必填 | 0 同意、 1 拒绝
+            "calculationType": 0, // 必填 | 0 按人数、 1 按百分比
+            "value": 10 // 必填 | 数值： 按人数时代表人数，按百分比时代表百分比(0 - 100]
+        },
+        "dueDate": { // 超时设置
+            "hours": 2, // null 代表不限时，数字代表超时时间
+            "strategy": 0 // 处理策略： 0 发送APP提醒、1 自动流转下去
+        },
+        copyTo: {
+            "personal": [ // 人员
+                {
+                    "uid": "881649", // uid
+                    "name": "杨六"
+                },
+            ],
+            "leader": [ // 组织领导
+                0, // 0 部门负责人、1 单位负责人、2 上级单位负责人
+            ],
+            "hierarchical": [ // 汇报层级
+                0, // 0 直接上级、1 二级汇报人、2 三级汇报人
+            ]
+        }
+    },
+    "stencil":{
+        "id": "ApproveTask" // 必填 | 节点标识
+    },
+    "outgoing":[
+        // 必填 | 下一跳节点出口
+        {
+            "resourceId":"sid-A1576ECA-E2CF-47D6-9C56-6938024D013D"
+        }
+    ]
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">填写</div>
+<div class="content">
+<pre class="highlight"><code class="language-json5" data-lang="json5">{
+    "resourceId":"sid-02D0F331-9AEC-4592-8C78-6F405FD401AA", // 必填 | 节点定义id (前端自动生成)
+    "properties": {
+        "name": "结束", // 非必填 | 节点名称
+        "candidateUser": {
+            "personal": [ // 人员
+                {
+                    "uid": "881649", // uid
+                    "name": "杨六"
+                },
+            ],
+            "leader": [ // 组织领导
+                0, // 0 部门负责人、1 单位负责人、2 上级单位负责人
+            ],
+            "hierarchical": [ // 汇报层级
+                0, // 0 直接上级、1 二级汇报人、2 三级汇报人
+            ]
+        },
+        "form": { // 非必填 | 表单配置
+            "fieldAccessAuth": {
+                // 非必填 | 字段访问权限
+            },
+            "operateAuth": {
+                // 非必填 | 表单操作权限：保存、提交
+            },
+            pageUrl: {
+                "web": "",
+                "mobile": ""
+            },
+        },
+        serviceApis: [ // 非必填 | 接口调用
+            {
+                trigger: 0, // 必填 | 0 任务开始前、1 任务结束后
+                serviceId: 123456, // 必填 | 服务id
+                serviceName: "服务名称", // 必填 | 服务名称
+                apiId: 123456, // 必填 | 接口id
+                apiName: "服务名称", // 必填 | 接口名称
+            }
+        ],
+        "multiInstanceCondition": { // 多实例设置
+            "branchType": 0, // 必填 | 0 同意、 1 拒绝
+            "calculationType": 0, // 必填 | 0 按人数、 1 按百分比
+            "value": 10 // 必填 | 数值： 按人数时代表人数，按百分比时代表百分比(0 - 100]
+        },
+        "dueDate": { // 超时设置
+            "hours": 2, // null 代表不限时，数字代表超时时间
+            "strategy": 0 // 处理策略： 0 发送APP提醒、1 自动流转下去
+        },
+        copyTo: {
+            "personal": [ // 人员
+                {
+                    "uid": "881649", // uid
+                    "name": "杨六"
+                },
+            ],
+            "leader": [ // 组织领导
+                0, // 0 部门负责人、1 单位负责人、2 上级单位负责人
+            ],
+            "hierarchical": [ // 汇报层级
+                0, // 0 直接上级、1 二级汇报人、2 三级汇报人
+            ]
+        }
+    },
+    "stencil":{
+        "id": "FillInTask" // 必填 | 节点标识
+    },
+    "outgoing":[
+        // 必填 | 下一跳节点出口
+        {
+            "resourceId":"sid-A1576ECA-E2CF-47D6-9C56-6938024D013D"
+        }
+    ]
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">条件分支</div>
+<div class="content">
+<pre class="highlight"><code class="language-json5" data-lang="json5">{
+    "resourceId":"sid-83131E16-E692-47EC-86B5-C95085EB584B", // [必填] 节点定义id (前端自动生成)
+    "properties":{
+        "defaultflow": "false", // 是否为默认分支，如果是，condition属性不可编辑
+        "condition": {
+            "type": 0, // 普通分支为自定义条件；审批分支为自定义条件和审批结果条件。
+            "value": "AGREE" //自定义条件是条件表达式， 审批结果条件是AGREE、REFUSE
+        },
+    },
+    "stencil":{
+        "id":"SequenceFlow" // 必填 | 节点标识
+    },
+    "outgoing":[ // 必填 | 下一跳节点出口
+        {
+            "resourceId":"sid-02D0F331-9AEC-4592-8C78-6F405FD401AA"
+        }
+    ],
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    <button class="anchor"><i class="fa fa-anchor"></i></button>
+    <div class="right">
+        <div class="wrap">
+
+            <!-- Content -->
+            <div class="side content">
+                <div>
+                    Content
+                </div>
+                <ul id="content-side" class="content-ul">
+                </ul>
+            </div>
+            <!-- 其他div框放到这里 -->
+            <!-- <div class="side">bbbb</div> -->
+        </div>
+    </div>
+</div>
+<script src="/jekyll-asciidoc-quickstart/js/pageContent.js " charset="utf-8"></script>
+
+
+    <footer class="site-footer">
+
+
+    <div class="wrapper">
+        <p class="description">
+             Cleverness is a gift, kindness is a choice. 
+        </p>
+        <p class="contact">
+            联系方式: 
+            <a href="https://github.com/caiwillie" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>  
+            <a href="mailto:caiwillie@126.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>   
+            <a href="https://www.zhihu.com/people/caiwillie" title="Zhihu"><i class="iconfont icon-daoruzhihu"></i></a>      
+        </p>
+        <p>
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </p>
+        <p class="power">
+            <span>
+                Site powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://pages.github.com/">Github Pages</a>.
+            </span>
+            <span>
+                Theme designed by <a href="https://github.com/Gaohaoyang">HyG</a>.
+            </span>
+        </p>
+    </div>
+</footer>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <div class="back-to-top">
+    <a href="#top" data-scroll>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+    <script src="/jekyll-asciidoc-quickstart /js/main.js " charset="utf-8"></script>
+    <script src="/jekyll-asciidoc-quickstart /js/smooth-scroll.min.js " charset="utf-8"></script>
+    <script type="text/javascript">
+      smoothScroll.init({
+        speed: 500, // Integer. How fast to complete the scroll in milliseconds
+        easing: 'easeInOutCubic', // Easing pattern to use
+        offset: 20, // Integer. How far to offset the scrolling anchor location in pixels
+      });
+    </script>
+    <!-- <script src="/jekyll-asciidoc-quickstart /js/scroll.min.js " charset="utf-8"></script> -->
+  </body>
+
+</html>

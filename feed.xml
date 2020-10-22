@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Caiwillie's Blog</title>
+    <description></description>
+    <link>http://47.242.141.111:4000/jekyll-asciidoc-quickstart/</link>
+    <atom:link href="http://47.242.141.111:4000/jekyll-asciidoc-quickstart/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 22 Oct 2020 20:21:39 +0800</pubDate>
+    <lastBuildDate>Thu, 22 Oct 2020 20:21:39 +0800</lastBuildDate>
+    <generator>Jekyll v4.1.1</generator>
+    
+      <item>
+        <title>Easy Learning English Grammar</title>
+        <description>&lt;div class=&quot;paragraph&quot;&gt;
+Collins Easy Learning Grammar is an accessible guide to English grammar and punctuation. With clear,concise explanations on everything from adverbs to word order, and from apostrophes to semicolons,it is indispensable for understanding correct usage.Each grammatical and punctuation point is clearly described in a user-friendly format that combines explanations with examples from modern English.
+&lt;/div&gt;</description>
+        <pubDate>Tue, 20 Oct 2020 00:00:00 +0800</pubDate>
+        <link>http://47.242.141.111:4000/jekyll-asciidoc-quickstart/2020/10/20/Easy-Learning-English-Grammar/</link>
+        <guid isPermaLink="true">http://47.242.141.111:4000/jekyll-asciidoc-quickstart/2020/10/20/Easy-Learning-English-Grammar/</guid>
+        
+        <category>english</category>
+        
+        <category>grammar</category>
+        
+        
+        <category>English</category>
+        
+      </item>
+    
+      <item>
+        <title>流程引擎文档 (初稿)</title>
+        <description>&lt;div class=&quot;paragraph&quot;&gt;
+流程引擎能够在 &lt;code&gt;多种触发条件下，接受固定的输入数据, 自动执行一系列操作&lt;/code&gt; 完成整个业务流程，减少重复开发，提升效率。
+&lt;/div&gt;</description>
+        <pubDate>Wed, 14 Oct 2020 00:00:00 +0800</pubDate>
+        <link>http://47.242.141.111:4000/jekyll-asciidoc-quickstart/2020/10/14/Flowable/</link>
+        <guid isPermaLink="true">http://47.242.141.111:4000/jekyll-asciidoc-quickstart/2020/10/14/Flowable/</guid>
+        
+        <category>flowable</category>
+        
+        
+        <category>流程引擎</category>
+        
+      </item>
+    
+  </channel>
+</rss>
