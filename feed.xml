@@ -5,9 +5,48 @@
     <description></description>
     <link>https://caiwillie.github.io/</link>
     <atom:link href="https://caiwillie.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 23 Oct 2020 15:14:52 +0800</pubDate>
-    <lastBuildDate>Fri, 23 Oct 2020 15:14:52 +0800</lastBuildDate>
+    <pubDate>Fri, 23 Oct 2020 18:04:30 +0800</pubDate>
+    <lastBuildDate>Fri, 23 Oct 2020 18:04:30 +0800</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
+    
+      <item>
+        <title>优雅得写文档</title>
+        <description>优雅得写文档是一个优秀程序员的必备技能
+</description>
+        <pubDate>Thu, 22 Oct 2020 00:00:00 +0800</pubDate>
+        <link>https://caiwillie.github.io/2020/10/22/%E4%BC%98%E9%9B%85%E5%BE%97%E5%86%99%E6%96%87%E6%A1%A3/</link>
+        <guid isPermaLink="true">https://caiwillie.github.io/2020/10/22/%E4%BC%98%E9%9B%85%E5%BE%97%E5%86%99%E6%96%87%E6%A1%A3/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>表单引擎</title>
+        <description>&lt;div class=&quot;paragraph&quot;&gt;
+传统的开发方式，大至系统小至页面改动，都必须通过修改代码去实现。
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+软件开发人员面对千变万化的客户需求，总是需要不断的编写业务代码、修改代码、迭代版本、测试代码、发布新版本。
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+结果是开发周期漫长、代码不好维护、人力成本不断增加、而足客户需求又得不到即使解决。
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+表单是系统中用的最多的交互形式，在中后台场景下，80%以上的页面，都是由表单组成， 几乎一半以上的开发工作量涉及表单的设计以及表单数据接口开发。
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+我们希望能够开发一个通用的表单引擎，实现配置优于编码的开发模式，减少重复开发，提升效率。
+&lt;/div&gt;</description>
+        <pubDate>Thu, 22 Oct 2020 00:00:00 +0800</pubDate>
+        <link>https://caiwillie.github.io/2020/10/22/form/</link>
+        <guid isPermaLink="true">https://caiwillie.github.io/2020/10/22/form/</guid>
+        
+        <category>form</category>
+        
+        
+        <category>表单引擎</category>
+        
+      </item>
     
       <item>
         <title>Easy Learning English Grammar</title>
@@ -15,8 +54,8 @@
 Collins Easy Learning Grammar is an accessible guide to English grammar and punctuation. With clear,concise explanations on everything from adverbs to word order, and from apostrophes to semicolons,it is indispensable for understanding correct usage.Each grammatical and punctuation point is clearly described in a user-friendly format that combines explanations with examples from modern English.
 &lt;/div&gt;</description>
         <pubDate>Tue, 20 Oct 2020 00:00:00 +0800</pubDate>
-        <link>https://caiwillie.github.io/2020/10/20/Easy-Learning-English-Grammar/</link>
-        <guid isPermaLink="true">https://caiwillie.github.io/2020/10/20/Easy-Learning-English-Grammar/</guid>
+        <link>https://caiwillie.github.io/2020/10/20/easy-learning-english-grammar/</link>
+        <guid isPermaLink="true">https://caiwillie.github.io/2020/10/20/easy-learning-english-grammar/</guid>
         
         <category>english</category>
         
@@ -28,13 +67,13 @@ Collins Easy Learning Grammar is an accessible guide to English grammar and punc
       </item>
     
       <item>
-        <title>流程引擎文档 (初稿)</title>
+        <title>流程引擎</title>
         <description>&lt;div class=&quot;paragraph&quot;&gt;
 流程引擎能够在 &lt;code&gt;多种触发条件下，接受固定的输入数据, 自动执行一系列操作&lt;/code&gt; 完成整个业务流程，减少重复开发，提升效率。
 &lt;/div&gt;</description>
         <pubDate>Wed, 14 Oct 2020 00:00:00 +0800</pubDate>
-        <link>https://caiwillie.github.io/2020/10/14/Flowable/</link>
-        <guid isPermaLink="true">https://caiwillie.github.io/2020/10/14/Flowable/</guid>
+        <link>https://caiwillie.github.io/2020/10/14/flowable/</link>
+        <guid isPermaLink="true">https://caiwillie.github.io/2020/10/14/flowable/</guid>
         
         <category>flowable</category>
         
